@@ -1,0 +1,76 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page_hd{
+    margin: 20rpx;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.placeholder{
+    text-align: center;
+    height: 2.3em;
+    line-height: 2.3em;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color:#aaa;
+}
+.btn-w{
+  width: 80%;
+}
+.points{
+  color: red;
+}
+.usermotto {
+  margin-top: 80px;
+}
+.changePoints {
+  margin-top: 20px;
+}
+.toExchange {
+  margin-top: 20px;
+}
+
+.back{
+  margin-left:20px;
+}
+.weui-label {
+  width: 90px;
+}
+.page__bd_spacing{
+  margin-top: 10px;
+}
+.able{
+  font-size:16px;
+}
