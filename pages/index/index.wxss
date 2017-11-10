@@ -1,76 +1,97 @@
 /**index.wxss**/
+
 .userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    color: #666666
 }
 
-.page_hd{
+.page_hd {
     margin: 20rpx;
+    background-image: url('http://pic.58pic.com/58pic/15/82/26/51V58PICcYI_1024.jpg');
+}
+.page__bd{
+     margin: 20rpx;
+}
+.page_foot{
+    position: fixed;
+    bottom: 2em;
+    align-content:center;
 }
 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
 }
 
 .userinfo-nickname {
-  color: #aaa;
+    color: #aaa;
 }
 
 .usermotto {
-  margin-top: 200px;
+    margin-top: 200px;
 }
 
-.placeholder{
+.placeholder {
     text-align: center;
     height: 2.3em;
     line-height: 2.3em;
+    color: #595959;
 }
 
 .userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .userinfo-avatar {
-  width: 150rpx;
-  height: 150rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+    width: 150rpx;
+    height: 150rpx;
+    margin: 20rpx;
+    border-radius: 50%;
 }
 
 .userinfo-nickname {
-  color:#aaa;
-}
-.btn-w{
-  width: 80%;
-}
-.points{
-  color: red;
-}
-.usermotto {
-  margin-top: 80px;
-}
-.changePoints {
-  margin-top: 20px;
-}
-.toExchange {
-  margin-top: 20px;
+    color: #aaa;
 }
 
-.back{
-  margin-left:20px;
+.btn-w {
+    width: 80%;
 }
+
+.points {
+    color: "#000000";
+}
+
+.usermotto {
+    margin-top: 80px;
+}
+
+.changePoints {
+    margin-top: 20px;
+}
+
+.toExchange {
+    margin-top: 20px;
+}
+
+.back {
+    margin-left: 20px;
+}
+
 .weui-label {
-  width: 90px;
+    width: 90px;
 }
-.page__bd_spacing{
-  margin-top: 10px;
+
+.page__bd_spacing {
+    margin-top: 10px;
 }
-.able{
-  font-size:16px;
+
+.able {
+    font-size: 16px;
 }

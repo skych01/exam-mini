@@ -8,8 +8,8 @@ function configuration_info() {
     protocol: 'http://',
     //domin_name: 'kingsun.cq7yun.com',
     //domin_name: 'weapp1.cq7yun.com/kingsun-points',
-    //domin_name: '16c88030h9.51mypc.cn',
-   domin_name: '192.168.2.114',
+    domin_name: '16c88030h9.51mypc.cn',
+   //domin_name: '192.168.2.114',
     // pathContext:'/wxd76fc8b1e5d3d2f7',
     pathContext: '',
     onLoginPath: '/login'

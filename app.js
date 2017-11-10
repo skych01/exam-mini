@@ -64,8 +64,10 @@ App({
                                         wx.setStorageSync('authentication', res.data.content);
                                         //获取用户信息存进全局变量 
                                         that.globalData.userInfo = getUserRes.userInfo;
+                                        that.globalData.isRead = true;
                                         //执行回调函数
-                                        if (typeof fn == 'function') callback(callbackPram);
+                                        console.log(callback)
+                                        if (typeof callback == 'function') callback(callbackPram);
                                         console.log('登录成功！authentication:' + wx.getStorageSync('authentication'));
                                     } else {
                                         wx.showModal({
@@ -103,6 +105,11 @@ App({
                     wx.getUserInfo({
                         success: function (getUserRes) {
                             that.globalData.userInfo = getUserRes.userInfo;
+                            that.globalData.isRead=true;
+                        },
+                        fail:(res)=>{
+                            console.log("get userinfo faill  info:");
+                            console.log(res);
                         }
                     });
                     //that.getRoleInfo();

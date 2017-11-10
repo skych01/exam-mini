@@ -1,24 +1,62 @@
 <!--index.wxml-->
-<view class="page"> 
-      <view class="page_hd">
-        <view bindtap="bindViewTap" class="userinfo">
-          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+
+<view class="page">
+    <view class="page_hd">
+        <view class="userinfo">
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+            <text class="userinfo">{{userInfo.nickName}}</text>
         </view>
         <view class="page__bd_spacing">
-          <view class="weui-flex" >
-              <view class="weui-flex__item">
-                <view class="placeholder"><text class="able">测试次数：</text><text class="points">{{restBillPoints}}</text></view>
-              </view>
-              <view class="weui-flex__item">
-                <view class="placeholder"><text class="able">最高分数：</text><text class="points">{{restGivePoints}}</text></view>
-              </view>
-          </view>
+            <view class="weui-flex">
+                <view class="weui-flex__item">
+                    <view class="placeholder">
+                        <text class="able">测试次数：</text>
+                        <text class="points">{{testTime}}</text>
+                    </view>
+                </view>
+                <view class="weui-flex__item">
+                    <view class="placeholder">
+                        <text class="able">最高分数：</text>
+                        <text class="points">{{maxPoints}}</text>
+                    </view>
+                </view>
+            </view>
         </view>
-      </view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-cells__title">模拟测试</view>
+        <view class="weui-grids">
+            <block wx:key="*this">
+                <navigator url="../test/test" class="weui-grid" hover-class="weui-grid_active" style='width:50%'>
+                    <image class="weui-grid__icon" src="../../lib/img/bill-s.png" />
+                    <view class="weui-grid__label">开始测试</view>
+                </navigator>
+                <navigator url="../history/history" class="weui-grid" hover-class="weui-grid_active" style='width:50%'>
+                    <image class="weui-grid__icon" src="../../lib/img/lishichengji.png" />
+                    <view class="weui-grid__label">历史成绩</view>
+                </navigator>
+            </block>
+        </view>
 
+        <view class="weui-cells__title">其他功能</view>
+        <view class="weui-grids">
+            <block wx:key="*this">
+                <navigator url="../favorite/favorite" class="weui-grid" hover-class="weui-grid_active" style='width:50%'>
+                    <image class="weui-grid__icon" src="../../lib/img/index-s.png" />
+                    <view class="weui-grid__label">我的收藏</view>
+                </navigator>
+                <navigator url="../browse/browse" class="weui-grid" hover-class="weui-grid_active" style='width:50%'>
+                    <image class="weui-grid__icon" src="../../lib/img/cont-s.png" />
+                    <view class="weui-grid__label">随便看看</view>
+                </navigator>
+            </block>
+        </view>
 
-
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+    </view>
+    <view class="weui-footer weui-footer_fixed-bottom  " style='bottom:1.8em;'>
+        <view class="weui-footer__links">
+            <navigator url="" class="weui-footer__link">我的主页</navigator>
+        </view>
+        <view class="weui-footer__text">Copyright © 2008-2016 company</view>
+    </view>
 </view>

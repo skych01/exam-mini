@@ -19,6 +19,7 @@ function getRequest(url, data, fn, parameter) {
             'Content-Type': 'application/json'
         },
         success: function (res) {
+            console.log("0000000000000000")
             if (res.statusCode == 200) {
                 fn(res);
                 loginNum = 0
@@ -158,6 +159,7 @@ function getLogin2Request() {
     getRequest(savaParameter.url, savaParameter.data, savaParameter.fn, savaParameter.parameter)
     //清空请求参数
     savaParameter = {};
+    console.log("111111111111111111");
 }
 function postLogin2Request() {
     postRequest(savaParameter.url, savaParameter.data, savaParameter.fn, savaParameter.parameter)

@@ -1,0 +1,47 @@
+<view class="mask" bindtouchstart="start" bindtouchend="end"></view>
+
+<view class="page" animation="{{animationData}}">
+    <view class="page_hd">
+        <view class="weui-cells__title">模拟测试
+            <text class="title_num">{{index}} / {{num}} </text>
+        </view>
+        <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_text">
+                    <view class="weui-media-box__title_in-text">{{questions[index-1].questionName}}</view>
+                </view>
+            </view>
+
+        </view>
+
+    </view>
+
+    <view class="page__bd">
+        <view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+            <checkbox-group bindchange="setAnswer">
+                <label class="weui-cell weui-check__label" wx:for="{{questions[index-1].answer}}" wx:key="openId">
+                    <view class="weui-cell__bd answerName">{{item.answerName}}</view>
+                    <checkbox class="weui-check" value="{{item.answerId}}" checked="{{item.checked}}" />
+                    <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                        <icon class="weui-icon-checkbox_circle" type="circle" size="23" wx:if="{{!item.checked}}"></icon>
+                        <icon class="weui-icon-checkbox_success" type="success" size="23" wx:else></icon>
+                    </view>
+                </label>
+            </checkbox-group>
+        </view>
+    </view>
+</view>
+
+<view class=" weui-footer_fixed-bottom footer ">
+    <view class="collection">
+        <image mode='aspectFit' style='width:60rpx;height:60rpx;vertical-align:middle;' src='../../lib/img/1.png'></image>收藏
+    </view>
+    <view class="time">
+        <image mode='aspectFit' style='width:60rpx;height:60rpx;vertical-align:middle;' src='../../lib/img/time.png'></image> {{timeDown}}
+    </view>
+    <view class="submit" bindtap='submit'>
+        <image mode='aspectFit' style='width:60rpx;height:60rpx;vertical-align:middle;' src='../../lib/img/subm.png' ></image>
+        提交
+    </view>
+</view>

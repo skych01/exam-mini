@@ -1,0 +1,17 @@
+<!--pages/test/result/result.wxml-->
+<view class='page'>
+    <view class="page__hd">
+        <view class="page__title">{{username}}</view>
+        <view class="page__title">本次测试结果：<text style='color:red;'>{{points}}</text> 分</view>
+    </view>
+    <view class="weui-grids">
+        <navigator url="../favorite/favorite" class="weui-grid" hover-class="weui-grid_active" style='width:25%'>
+            <image class="weui-grid__icon" src="../../../lib/img/success.png" />
+            <view class="weui-grid__label">1</view>
+        </navigator>
+        <navigator url="../favorite/favorite" class="weui-grid" hover-class="weui-grid_active" style='width:25%'>
+            <image class="weui-grid__icon" src="../../../lib/img/error.png" />
+            <view class="weui-grid__label">3</view>
+        </navigator>
+    </view>
+</view>

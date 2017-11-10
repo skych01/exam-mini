@@ -1,0 +1,19 @@
+<!--pages/favorite/favorite.wxml-->
+
+
+        <view class="weui-cells__title">收藏夹列表
+            <text class="title_num">2</text>
+        </view>
+    <view class="weui-cells weui-cells_after-title " >
+        <view  class="weui-cell weui-cell_access" bindtap="pointsDetail" data-date="{{date}}" data-employee="{{item}}" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">
+              123
+            </view>
+
+            <view class="weui-cell__ft margin_right" style="  width: 20%;">
+               222}分
+            </view>
+
+
+        </view>
+    </view>

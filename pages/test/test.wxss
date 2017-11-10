@@ -1,0 +1,49 @@
+/* pages/test/test.wxss */
+
+.title_num {
+    float: right;
+    color: #43cd80;
+}
+
+.answerName {
+    font-size: 26rpx;
+    font-family: Georgia;
+    margin-left: 20rpx;
+}
+
+.footer {
+    bottom: 0;
+    height: 80rpx;
+    line-height: 80rpx;
+    background-color: #dedede;
+    text-align: center;
+    font-size: 14px;
+}
+
+.collection {
+    width: 33.3333%;
+    height: 60rpx;
+    float: left;
+    color: #999;
+}
+
+.time {
+    width: 33.333333%;
+    float: left;
+    color: #999;
+}
+
+.submit {
+    background-color: #969696;
+    width: 33.333333%;
+    float: left;
+  
+}
+
+.mask {
+    height: 100%;
+    position: fixed;
+    bottom: 80rpx;
+    left: 0;
+    right: 0;
+}
