@@ -11,7 +11,8 @@ Page({
         num: 0,
         lastX: 0,
         lastY: 0,
-        timeDown: '30:00'
+        //设置时长
+        timeLength: 1
     },
 
     /**
@@ -21,16 +22,18 @@ Page({
         this.dataInit();
     },
 
+
     dataInit: function () {
         var that = this;
         wx.showNavigationBarLoading();
+
         api.getRequest("/mini/testStart", {}, function (res) {
             var questionList = res.data.content;
             that.setData({
                 num: questionList.length,
                 questions: questionList,
             })
-            this.timeDown();
+            that.timeDown();
             wx.hideNavigationBarLoading();
         })
     },
@@ -60,7 +63,6 @@ Page({
     last: function () {
         var that = this;
         var index = that.data.index - 1;
-
         //不是第一题
         if (index > 0) {
             that.teggerIng();
@@ -108,7 +110,7 @@ Page({
     //倒计时
     timeDown: function () {
         var that = this;
-        var x = 30,
+        var x = that.data.timeLength,
             interval;
         var d = new Date("1111/1/1,0:" + x + ":0");
         interval = setInterval(function () {
@@ -124,12 +126,9 @@ Page({
                 wx.showModal({
                     title: '时间到！',
                     content: '本次测试已提交，点击确认查看结果',
+                    showCancel: false,
                     success: function (res) {
-                        if (res.confirm) {
-                            
-                        }else{
-
-                        }
+                        that.submit();
                     }
                 })
                 return;
@@ -143,11 +142,38 @@ Page({
 
     },
 
+    //提交之前的验证 确认提交
+    vaildAndSubmit: function () {
+        var that = this;
+        if (that.result.length < that.data.questions.length - 1) {
+            wx.showModal({
+                content: '当前题目尚未答完，确定提交？',
+                success: function (res) {
+                    if (!res.confirm) {
+                        return;
+                    } else {
+                        that.submit();
+                    }
+                }
+            })
+        } else {
+            that.submit();
+        }
+    },
     //提交试卷
     submit: function () {
-        this.saveResult();
-        api.getRequest("/mini/submitAnswer", { data: this.result }, function (res) {
+        var that = this;
+        wx.showToast({
+            title: '提交中...',
+            icon: 'loading',
+            mask: true
+        });
+        that.saveResult();
+        api.getRequest("/mini/submitAnswer", { data: that.result }, function (res) {
             wx.hideNavigationBarLoading();
+            wx.navigateTo({
+                url: 'result/result?result=' + JSON.stringify(res.data.content) + '&data=' + JSON.stringify(that.data.questions)
+            })
         })
     },
 
@@ -160,8 +186,9 @@ Page({
     //选择答案
     setAnswer: function (e) {
         var that = this;
-        var AllItem = this.data.questions[this.data.index - 1].answer, item = e.detail.value;
-        that.thisResult = { questionId: this.data.questions[this.data.index - 1].questionId,answer:[]}
+        var thisQuestion=this.data.questions[this.data.index - 1]
+        var AllItem = thisQuestion.answer, item = e.detail.value;
+        that.thisResult = { questionId: this.data.questions[this.data.index - 1].questionId, answer: [] }
         for (var i = 0, lenI = AllItem.length; i < lenI; ++i) {
             AllItem[i].checked = false;
             for (var j = 0, lenJ = item.length; j < lenJ; ++j) {
@@ -172,12 +199,10 @@ Page({
                 }
             }
         }
-
         this.data.questions[this.data.index - 1].answer = AllItem;
         this.setData({
             questions: this.data.questions
         });
-        //selEmployee = employee
     },
 
 

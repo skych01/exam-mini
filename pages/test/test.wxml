@@ -40,7 +40,7 @@
     <view class="time">
         <image mode='aspectFit' style='width:60rpx;height:60rpx;vertical-align:middle;' src='../../lib/img/time.png'></image> {{timeDown}}
     </view>
-    <view class="submit" bindtap='submit'>
+    <view class="submit" bindtap='vaildAndSubmit'>
         <image mode='aspectFit' style='width:60rpx;height:60rpx;vertical-align:middle;' src='../../lib/img/subm.png' ></image>
         提交
     </view>

@@ -19,7 +19,6 @@ function getRequest(url, data, fn, parameter) {
             'Content-Type': 'application/json'
         },
         success: function (res) {
-            console.log("0000000000000000")
             if (res.statusCode == 200) {
                 fn(res);
                 loginNum = 0

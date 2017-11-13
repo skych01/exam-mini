@@ -53,7 +53,7 @@
         </view>
 
     </view>
-    <view class="weui-footer weui-footer_fixed-bottom  " style='bottom:1.8em;'>
+    <view class="weui-footer weui-footer_fixed-bottom  " style='bottom:0.2em;'>
         <view class="weui-footer__links">
             <navigator url="" class="weui-footer__link">我的主页</navigator>
         </view>

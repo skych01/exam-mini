@@ -1,8 +1,10 @@
 {
     "pages": [
+                "pages/index/index",
+                "pages/test/test",
         "pages/test/result/result",
-        "pages/index/index",
-        "pages/test/test",
+
+
         "pages/browse/browse",
         "pages/favorite/favorite",
         "pages/history/history"
